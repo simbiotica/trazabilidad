@@ -36,16 +36,9 @@ require.config({
 });
 
 require([
-  'atlas-service',
   'sidebar-view',
   'map-view'
-], function(atlasService, SidebarView, MapView) {
-
-  atlasService.get({},
-    function(data) {
-      console.log(data);
-    });
-
+], function(SidebarView, MapView) {
   new SidebarView();
   new MapView();
 });
