@@ -28,10 +28,12 @@ define([
     },
 
     getData: function(e) {
+      var name;
+      
       if (e.currentTarget) {
-        var name = $(e.currentTarget).val();
+        name = $(e.currentTarget).val();
       } else {
-        var name = $(e).val();
+        name = $(e).val();
       };
       
       var product = _.findWhere(this.products, {name: name});
@@ -61,7 +63,7 @@ define([
           }
 
           var serie = {
-            name: this.name,
+            name: this.dest,
             data: [this.export_val]
           };
 
