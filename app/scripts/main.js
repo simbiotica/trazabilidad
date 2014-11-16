@@ -12,7 +12,8 @@ require.config({
     d3: '../../bower_components/d3/d3',
     underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
     highcharts: '../../bower_components/highcharts-release/highcharts',
-    uri: '../../bower_components/uri-templates/uri-templates'
+    uri: '../../bower_components/uri-templates/uri-templates',
+    topojson: '../../bower_components/topojson/topojson'
   },
 
   shim: {

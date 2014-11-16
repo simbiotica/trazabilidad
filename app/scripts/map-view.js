@@ -1,25 +1,18 @@
 define([
   'underscore',
   'backbone',
-  'd3'
-], function(_, Backbone, d3) {
+  'd3',
+  'timezones',
+  'topojson'
+], function(_, Backbone, d3, timezones, topojson) {
   'use strict';
 
   var MapView = Backbone.View.extend({
 
     el: '#map',
 
-    tileUrl: 'https://cartocdn_{s}.global.ssl.fastly.net/base-eco/{z}/{x}/{y}.png',
-
-    mapOptions: {
-      zoom: 2,
-      center: [15, 0],
-      attributionControl: false,
-    },
-
     initialize: function() {
       this._initMap();
-      this._setSvg();
       this._setListeners();
     },
 
@@ -27,33 +20,53 @@ define([
       Backbone.Events.on('AtlasService/change', _.bind(this._updateProducts, this));
     },
 
-    _updateProducts: function(product) {
-      console.log(product.code);
+    _updateProducts: function(data) {
+      console.log(data);
     },
 
     _initMap: function() {
-      this.map = L.map(this.el, this.mapOptions);
-      L.tileLayer(this.tileUrl).addTo(this.map);
-    },
+      var width = this.$el.width(),
+          height = this.$el.height();
 
-    _setSvg: function() {
-      var self = this;
+      var projection = d3.geo.mercator()
+          .scale(width / 2 / Math.PI)
+          .translate([width / 2, height / 2])
+          .precision(.1);
 
-      var svg = d3.select(this.map.getPanes().overlayPane)
-        .append('svg')
-        .append('g')
-        .attr('class', 'leaflet-zoom-hide');
+      var path = d3.geo.path()
+          .projection(projection);
 
-      var transform = d3.geo.transform({
-        point: projectPoint
-      });
+      var graticule = d3.geo.graticule();
 
-      var d3path = d3.geo.path().projection(transform);
+      var svg = d3.select(this.el).append('svg')
+          .attr('width', width)
+          .attr('height', height);
 
-      function projectPoint(x, y) {
-        var point = self.map.latLngToLayerPoint(new L.LatLng(y, x));
-        self.stream.point(point.x, point.y);
-      } 
+      svg.append('path')
+          .datum(graticule)
+          .attr('class', 'graticule')
+          .attr('d', path);
+
+      path.projection(null);
+
+      svg.insert('g', '.graticule')
+          .attr('class', 'timezones')
+        .selectAll('path')
+          .data(topojson.feature(timezones, timezones.objects.timezones).features)
+        .enter().append('path')
+          .attr('d', path)
+          .attr('class', function(d) {
+            return d.id;
+          })
+        .append('title')
+          .text(function(d) { return d.id; });
+
+      svg.insert('path', '.graticule')
+          .datum(topojson.mesh(timezones, timezones.objects.timezones, function(a, b) { return a !== b; }))
+          .attr('class', 'boundary')
+          .attr('d', path);
+
+      d3.select(self.frameElement).style('height', height + 'px');
     }
 
   });
