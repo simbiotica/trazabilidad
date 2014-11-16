@@ -9,6 +9,7 @@ require.config({
     backbone: '../../bower_components/backbone/backbone',
     text: '../../bower_components/requirejs-text/text',
     Class: '../../bower_components/Class.js/Class',
+    d3: '../../bower_components/d3/d3',
     underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
     highcharts: '../../bower_components/highcharts-release/highcharts',
     uri: '../../bower_components/uri-templates/uri-templates'
@@ -43,16 +44,9 @@ require.config({
 });
 
 require([
-  'atlas-service',
   'sidebar-view',
   'map-view'
-], function(atlasService, SidebarView, MapView) {
-
-  atlasService.get({},
-    function(data) {
-      console.log(data);
-    });
-
+], function(SidebarView, MapView) {
   new SidebarView();
   new MapView();
 });
