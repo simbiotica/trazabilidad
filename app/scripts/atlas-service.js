@@ -7,42 +7,140 @@ define([
 
   var AtlasService = Class.extend({
 
-    products: {
-      'Potatoes': '0701',
-      'Tomatoes': '0702',
-      'Onions': '0703',
-      'Cabbages': '0704',
-      'Lettuce': '0705',
-      'Root Vegetables': '0706',
-      'Cucumbers': '0707',
-      'Legumes': '0708',
-      'Other Vegetables': '0709',
-      'Cassava': '0714',
-      'Coconuts, Brazil Nuts, and Cashews': '0801',
-      'Other Nuts': '0802',
-      'Bananas': '0803',
-      'Tropical Fruits': '0804',
-      'Citrus': '0805',
-      'Grapes': '0806',
-      'Melons': '0807',
-      'Apples and Pears': '0808',
-      'Other Fruits': '0810',
-      'Coffee': '0901',
-      'Tea': '0902',
-      'MatŽ': '0903',
-      'Wheat': '1001',
-      'Rye': '1002',
-      'Barley': '1003',
-      'Oats': '1004',
-      'Corn': '1005',
-      'Rice': '1006',
-      'Buckwheat': '1008',
-      'Malt': '1107',
-      'Soybeans': '1201',
-      'Ground Nuts': '1202',
-      'Hops': '1210',
-      'Locust Beans': '1212'
-    },
+    products: [
+      {
+        name: 'Tomatoes',
+        id: '0702'
+      },
+      {
+        name: 'Onions',
+        id: '0703'
+      },
+      {
+        name: 'Cabbages',
+        id: '0704'
+      },
+      {
+        name: 'Lettuce',
+        id: '0705'
+      },
+      {
+        name: 'Root Vegetables',
+        id: '0706'
+      },
+      {
+        name: 'Cucumbers',
+        id: '0707'
+      },
+      {
+        name: 'Legumes',
+        id: '0708'
+      },
+      {
+        name: 'Other Vegetables',
+        id: '0709'
+      },
+      {
+        name: 'Cassava',
+        id: '0714'
+      },
+      {
+        name: 'Coconuts, Brazil Nuts, and Cashews',
+        id: '0801'
+      },
+      {
+        name: 'Other Nuts',
+        id: '0802'
+      },
+      {
+        name: 'Bananas',
+        id: '0803'
+      },
+      {
+        name: 'Tropical Fruits',
+        id: '0804'
+      },
+      {
+        name: 'Citrus',
+        id: '0805'
+      },
+      {
+        name: 'Grapes',
+        id: '0806'
+      },
+      {
+        name: 'Melons',
+        id: '0807'
+      },
+      {
+        name: 'Apples and Pears',
+        id: '0808'
+      },
+      {
+        name: 'Other Fruits',
+        id: '0810'
+      },
+      {
+        name: 'Coffee',
+        id: '0901'
+      },
+      {
+        name: 'Tea',
+        id: '0902'
+      },
+      {
+        name: 'MatŽ',
+        id: '0903'
+      },
+      {
+        name: 'Wheat',
+        id: '1001'
+      },
+      {
+        name: 'Rye',
+        id: '1002'
+      },
+      {
+        name: 'Barley',
+        id: '1003'
+      },
+      {
+        name: 'Oats',
+        id: '1004'
+      },
+      {
+        name: 'Corn',
+        id: '1005'
+      },
+      {
+        name: 'Rice',
+        id: '1006'
+      },
+      {
+        name: 'Buckwheat',
+        id: '1008'
+      },
+      {
+        name: 'Malt',
+        id: '1107'
+      },
+      {
+        name: 'Soybeans',
+        id: '1201'
+      },
+      {
+        name: 'Ground Nuts',
+        id: '1202'
+      },
+      {
+        name: 'Hops',
+        id: '1210'
+      },
+      {
+        name: 'Locust Beans',
+        id: '1212'
+      }
+    ],
 
     defaults: {
       classification: 'hs',
