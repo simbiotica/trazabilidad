@@ -11,123 +11,153 @@ define([
     products: [
       {
         name: 'Tomatoes',
-        id: '0702'
+        id: '0702',
+        production: 4007000
       },
       {
         name: 'Onions',
-        id: '0703'
+        id: '0703',
+        production: 1464700
       },
       {
         name: 'Cabbages',
-        id: '0704'
+        id: '0704',
+        production: 325500
       },
       {
         name: 'Lettuce',
-        id: '0705'
+        id: '0705',
+        production: 870200
       },
       {
         name: 'Root Vegetables',
-        id: '0706'
+        id: '0706',
+        production: 907400
       },
       {
         name: 'Cucumbers',
-        id: '0707'
+        id: '0707',
+        production: 713200
       },
       {
         name: 'Legumes',
-        id: '0708'
+        id: '0708',
+        production: 293100
       },
       {
         name: 'Other Vegetables',
-        id: '0709'
+        id: '0709',
+        production: 4828300
       },
       {
         name: 'Cassava',
-        id: '0714'
+        id: '0714',
+        production: 28000
       },
       {
         name: 'Coconuts, Brazil Nuts, and Cashews',
-        id: '0801'
+        id: '0801',
+        production:
       },
       {
         name: 'Other Nuts',
-        id: '0802'
+        id: '0802',
+        production: 257100
       },
       {
         name: 'Bananas',
-        id: '0803'
+        id: '0803',
+        production: 364600
       },
       {
         name: 'Tropical Fruits',
-        id: '0804'
+        id: '0804',
+        production: 175700
       },
       {
         name: 'Citrus',
-        id: '0805'
+        id: '0805',
+        production: 5501500
       },
       {
         name: 'Grapes',
-        id: '0806'
+        id: '0806',
+        production:
       },
       {
         name: 'Melons',
-        id: '0807'
+        id: '0807',
+        production: 1724500
       },
       {
         name: 'Apples and Pears',
-        id: '0808'
+        id: '0808',
+        production: 973500
       },
       {
         name: 'Other Fruits',
-        id: '0810'
+        id: '0810',
+        production: 529747
       },
       {
         name: 'Coffee',
-        id: '0901'
+        id: '0901',
+        production: 0
       },
       {
         name: 'Tea',
-        id: '0902'
+        id: '0902',
+        production:
       },
       {
         name: 'MatŽ',
-        id: '0903'
+        id: '0903',
+        production: 
       },
       {
         name: 'Wheat',
-        id: '1001'
+        id: '1001',
+        production: 4650300
       },
       {
         name: 'Rye',
-        id: '1002'
-      },
+        id: '1002',
+        production: 296700
+       },
       {
         name: 'Barley',
-        id: '1003'
+        id: '1003',
+        production: 5976900
       },
       {
         name: 'Oats',
-        id: '1004'
+        id: '1004',
+        production: 683500
       },
       {
         name: 'Corn',
-        id: '1005'
+        id: '1005',
+        production: 4234600
       },
       {
         name: 'Rice',
-        id: '1006'
+        id: '1006',
+        production:
       },
       {
         name: 'Buckwheat',
-        id: '1008'
+        id: '1008',
+        production:
       },
       {
         name: 'Malt',
-        id: '1107'
+        id: '1107',
+        production:
       },
       {
         name: 'Soybeans',
-        id: '1201'
+        id: '1201',
+        production:
       },
       {
         name: 'Ground Nuts',
@@ -135,11 +165,13 @@ define([
       },
       {
         name: 'Hops',
-        id: '1210'
+        id: '1210',
+        production:
       },
       {
         name: 'Locust Beans',
-        id: '1212'
+        id: '1212',
+        production:
       }
     ],
 
