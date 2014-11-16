@@ -16,15 +16,14 @@ define([
       product: 'all'
     },
 
-    urlTemplate: 'http://atlas.media.mit.edu/{classification}/{tradeFlow}/{year}/{origin}/{destination}/{product}/',
+    urlTemplate: 'http://atlas.media.mit.edu/{classification}/{tradeFlow}/' +
+      '{year}/{origin}/{destination}/{product}/',
 
     get: function(params, callback) {
       var url = this._getUrl(params);
 
       $.getJSON(url, function(d) {
-        console.log('success');
-        console.log(d);
-        callback(d);
+        callback && callback(d.data);
       });
     },
 

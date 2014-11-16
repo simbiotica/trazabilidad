@@ -40,6 +40,12 @@ require([
   'sidebar-view',
   'map-view'
 ], function(atlasService, SidebarView, MapView) {
+
+  atlasService.get({},
+    function(data) {
+      console.log(data);
+    });
+
   new SidebarView();
   new MapView();
 });
