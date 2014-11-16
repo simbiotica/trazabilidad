@@ -3,7 +3,7 @@ define([
 ], function(Class) {
   'use strict';
 
-  var atlasService = Class.extend({
+  var AtlasService = Class.extend({
 
     init: function() {
       console.log('Hello form Atlas Service');
@@ -11,5 +11,5 @@ define([
 
   });
 
-  return new atlasService();
+  return new AtlasService();
 });
