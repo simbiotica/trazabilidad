@@ -31,6 +31,7 @@
     "almond": "~0.3.0",
     "Class.js": "~1.0.0",
     "uri-templates": "~0.1.5",
-    "highcharts-release": "~4.0.4"
+    "highcharts-release": "~4.0.4",
+    "d3": "~3.4.13"
   }
 }

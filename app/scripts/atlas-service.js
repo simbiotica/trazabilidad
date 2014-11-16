@@ -1,8 +1,9 @@
 define([
   'Class',
   'uri',
-  'underscore'
-], function(Class, UriTemplate, _) {
+  'underscore',
+  'backbone'
+], function(Class, UriTemplate, _, Backbone) {
   'use strict';
 
   var AtlasService = Class.extend({
@@ -60,6 +61,7 @@ define([
       var url = this._getUrl(params);
 
       $.getJSON(url, function(d) {
+        Backbone.Events.trigger('AtlasService/change', d.data);
         callback && callback(d.data);
       });
     },
