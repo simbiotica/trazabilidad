@@ -35,6 +35,10 @@ require.config({
 });
 
 require([
-], function() {
-  console.log('Vamosss');
+  'atlas-service',
+  'sidebar-view',
+  'map-view'
+], function(atlasService, SidebarView, MapView) {
+  new SidebarView();
+  new MapView();
 });
