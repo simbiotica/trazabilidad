@@ -1,0 +1,38 @@
+{
+  "name": "trazabilidad",
+  "version": "1.0.0",
+  "homepage": "https://github.com/simbiotica/trazabilidad",
+  "authors": [
+    "EcoHack Madrid"
+  ],
+  "description": "A webapp",
+  "main": "app/scripts/main.js",
+  "keywords": [
+    "ecohack"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.15",
+    "jquery": "~2.1.1",
+    "backbone": "~1.1.2",
+    "underscore": "~1.7.0",
+    "normalize-css": "~3.0.2",
+    "underscore.string": "~2.3.3",
+    "text": "~2.0.12",
+    "handlebars": "~2.0.0",
+    "moment": "~2.8.3",
+    "almond": "~0.3.0",
+    "Class.js": "~1.0.0",
+    "uri-templates": "~0.1.5",
+    "highcharts-release": "~4.0.4",
+    "d3": "~3.4.13",
+    "topojson": "~1.6.18"
+  }
+}
