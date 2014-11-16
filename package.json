@@ -1,0 +1,44 @@
+{
+  "name": "trazabilidad",
+  "version": "1.0.0",
+  "description": "A webapp",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simbiotica/trazabilidad.git"
+  },
+  "keywords": [
+    "ecohack",
+    "visualizacion",
+    "application"
+  ],
+  "author": "EcoHack Madrid",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.3.0",
+    "fluidity": "^0.2.0",
+    "grunt": "^0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-requirejs": "^0.4.4",
+    "grunt-contrib-stylus": "^0.19.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-gh-pages": "^0.9.1",
+    "grunt-requirejs": "^0.4.2",
+    "grunt-usemin": "^2.4.0",
+    "jshint-stylish": "^0.4.0",
+    "load-grunt-tasks": "^0.6.0",
+    "stylus": "^0.48.1",
+    "time-grunt": "^1.0.0"
+  }
+}
