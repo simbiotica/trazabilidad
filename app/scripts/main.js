@@ -11,6 +11,7 @@ require.config({
     Class: '../../bower_components/Class.js/Class',
     underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
     highcharts: '../../bower_components/highcharts-release/highcharts'
+    uri: '../../bower_components/uri-templates/uri-templates'
   },
 
   shim: {
@@ -43,6 +44,12 @@ require([
   'sidebar-view',
   'map-view'
 ], function(atlasService, SidebarView, MapView) {
+
+  atlasService.get({},
+    function(data) {
+      console.log(data);
+    });
+
   new SidebarView();
   new MapView();
 });
