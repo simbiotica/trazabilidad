@@ -203,6 +203,8 @@ define([
           var oid = _.findWhere(self.countryNames, {dest_id: o.origin_id});
           o.dest_id = did ? did.Abbrv : o.dest_id;
           o.origin_id = oid ? oid.Abbrv : o.origin_id;
+          o.dest = did ? did.Name : o.dest_id;
+          o.origin = oid ? oid.Name : o.origin_id;
         });
         Backbone.Events.trigger('AtlasService/change', d.data);
         callback && callback(d.data);
