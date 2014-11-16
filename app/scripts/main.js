@@ -9,7 +9,8 @@ require.config({
     backbone: '../../bower_components/backbone/backbone',
     text: '../../bower_components/requirejs-text/text',
     Class: '../../bower_components/Class.js/Class',
-    underscoreString: '../../bower_components/underscore.string/lib/underscore.string'
+    underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
+    highcharts: '../../bower_components/highcharts-release/highcharts'
   },
 
   shim: {
@@ -29,7 +30,10 @@ require.config({
     underscoreString: {
       deps: ['underscore'],
       exports: '_string'
-    }
+    },
+    highcharts: {
+      exports: 'Highcharts'
+    },
   }
 
 });
