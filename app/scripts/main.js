@@ -7,12 +7,13 @@ require.config({
     jquery: '../../bower_components/jquery/dist/jquery',
     underscore: '../../bower_components/underscore/underscore',
     backbone: '../../bower_components/backbone/backbone',
-    text: '../../bower_components/requirejs-text/text',
+    text: '../../bower_components/text/text',
     Class: '../../bower_components/Class.js/Class',
     d3: '../../bower_components/d3/d3',
     underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
     highcharts: '../../bower_components/highcharts-release/highcharts',
-    uri: '../../bower_components/uri-templates/uri-templates'
+    uri: '../../bower_components/uri-templates/uri-templates',
+    topojson: '../../bower_components/topojson/topojson'
   },
 
   shim: {

@@ -2,8 +2,10 @@ define([
   'Class',
   'uri',
   'underscore',
-  'backbone'
-], function(Class, UriTemplate, _, Backbone) {
+  'backbone',
+  'd3',
+  'text!country-names.csv'
+], function(Class, UriTemplate, _, Backbone, d3, countryCsv) {
   'use strict';
 
   var AtlasService = Class.extend({
@@ -185,13 +187,24 @@ define([
       product: 'all'
     },
 
+    init: function() {
+      this.countryNames = d3.csv.parse(countryCsv);
+    },
+
     urlTemplate: 'http://atlas.media.mit.edu/{classification}/{tradeFlow}/' +
       '{year}/{origin}/{destination}/{product}/',
 
     get: function(params, callback) {
+      var self = this;
       var url = this._getUrl(params);
 
       $.getJSON(url, function(d) {
+        _.each(d.data, function(o) {
+          var did = _.findWhere(self.countryNames, {dest_id: o.dest_id});
+          var oid = _.findWhere(self.countryNames, {dest_id: o.origin_id});
+          o.dest_id = did ? did.Abbrv : o.dest_id;
+          o.origin_id = oid ? oid.Abbrv : o.origin_id;
+        });
         Backbone.Events.trigger('AtlasService/change', d.data);
         callback && callback(d.data);
       });

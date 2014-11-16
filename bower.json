@@ -32,6 +32,7 @@
     "Class.js": "~1.0.0",
     "uri-templates": "~0.1.5",
     "highcharts-release": "~4.0.4",
-    "d3": "~3.4.13"
+    "d3": "~3.4.13",
+    "topojson": "~1.6.18"
   }
 }
