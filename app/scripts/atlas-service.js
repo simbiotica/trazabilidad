@@ -57,7 +57,7 @@ define([
       {
         name: 'Coconuts, Brazil Nuts, and Cashews',
         id: '0801',
-        production:
+        production: 0
       },
       {
         name: 'Other Nuts',
@@ -82,7 +82,7 @@ define([
       {
         name: 'Grapes',
         id: '0806',
-        production:
+        production: 0
       },
       {
         name: 'Melons',
@@ -107,12 +107,12 @@ define([
       {
         name: 'Tea',
         id: '0902',
-        production:
+        production: 0
       },
       {
         name: 'MatŽ',
         id: '0903',
-        production: 
+        production: 0
       },
       {
         name: 'Wheat',
@@ -142,36 +142,37 @@ define([
       {
         name: 'Rice',
         id: '1006',
-        production:
+        production: 881100
       },
       {
         name: 'Buckwheat',
         id: '1008',
-        production:
+        production: 0
       },
       {
         name: 'Malt',
         id: '1107',
-        production:
+        production: 0
       },
       {
         name: 'Soybeans',
         id: '1201',
-        production:
+        production: 1200
       },
       {
         name: 'Ground Nuts',
-        id: '1202'
+        id: '1202',
+        production: 125
       },
       {
         name: 'Hops',
         id: '1210',
-        production:
+        production: 0
       },
       {
         name: 'Locust Beans',
         id: '1212',
-        production:
+        production: 0
       }
     ],
 
