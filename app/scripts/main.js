@@ -37,6 +37,9 @@ require.config({
     highcharts: {
       exports: 'Highcharts'
     },
+    uri: {
+      exports: 'uri'
+    }
   }
 
 });
