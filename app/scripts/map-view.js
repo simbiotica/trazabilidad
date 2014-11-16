@@ -49,6 +49,7 @@ define([
 
         var lineGraph = this.svg
           .append('path')
+          .attr('class', 'route')
           .attr('d', lineFunction([centroid, toCentroid]))
           .attr('stroke', 'orange')
           .attr('stroke-width', 2)
