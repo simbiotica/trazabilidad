@@ -2,8 +2,10 @@ define([
   'Class',
   'uri',
   'underscore',
-  'backbone'
-], function(Class, UriTemplate, _, Backbone) {
+  'backbone',
+  'd3',
+  'text!country-names.csv'
+], function(Class, UriTemplate, _, Backbone, d3, countryCsv) {
   'use strict';
 
   var AtlasService = Class.extend({
@@ -57,7 +59,7 @@ define([
       {
         name: 'Coconuts, Brazil Nuts, and Cashews',
         id: '0801',
-        production:
+        production: 0
       },
       {
         name: 'Other Nuts',
@@ -82,7 +84,7 @@ define([
       {
         name: 'Grapes',
         id: '0806',
-        production:
+        production: 0
       },
       {
         name: 'Melons',
@@ -107,12 +109,12 @@ define([
       {
         name: 'Tea',
         id: '0902',
-        production:
+        production: 0
       },
       {
         name: 'MatŽ',
         id: '0903',
-        production: 
+        production: 0
       },
       {
         name: 'Wheat',
@@ -142,22 +144,22 @@ define([
       {
         name: 'Rice',
         id: '1006',
-        production:
+        production: 0
       },
       {
         name: 'Buckwheat',
         id: '1008',
-        production:
+        production: 0
       },
       {
         name: 'Malt',
         id: '1107',
-        production:
+        production: 0
       },
       {
         name: 'Soybeans',
         id: '1201',
-        production:
+        production: 0
       },
       {
         name: 'Ground Nuts',
@@ -166,12 +168,12 @@ define([
       {
         name: 'Hops',
         id: '1210',
-        production:
+        production: 0
       },
       {
         name: 'Locust Beans',
         id: '1212',
-        production:
+        production: 0 
       }
     ],
 
@@ -184,13 +186,24 @@ define([
       product: 'all'
     },
 
+    init: function() {
+      this.countryNames = d3.csv.parse(countryCsv);
+    },
+
     urlTemplate: 'http://atlas.media.mit.edu/{classification}/{tradeFlow}/' +
       '{year}/{origin}/{destination}/{product}/',
 
     get: function(params, callback) {
+      var self = this;
       var url = this._getUrl(params);
 
       $.getJSON(url, function(d) {
+        _.each(d.data, function(o) {
+          var did = _.findWhere(self.countryNames, {dest_id: o.dest_id});
+          var oid = _.findWhere(self.countryNames, {dest_id: o.origin_id});
+          o.dest_id = did ? did.Abbrv : o.dest_id;
+          o.origin_id = oid ? oid.Abbrv : o.origin_id;
+        });
         Backbone.Events.trigger('AtlasService/change', d.data);
         callback && callback(d.data);
       });
