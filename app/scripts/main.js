@@ -10,6 +10,7 @@ require.config({
     text: '../../bower_components/requirejs-text/text',
     Class: '../../bower_components/Class.js/Class',
     underscoreString: '../../bower_components/underscore.string/lib/underscore.string',
+    highcharts: '../../bower_components/highcharts-release/highcharts'
     uri: '../../bower_components/uri-templates/uri-templates'
   },
 
@@ -30,7 +31,10 @@ require.config({
     underscoreString: {
       deps: ['underscore'],
       exports: '_string'
-    }
+    },
+    highcharts: {
+      exports: 'Highcharts'
+    },
   }
 
 });
